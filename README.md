@@ -1,97 +1,53 @@
-# tattoo_aftercare_chatbot
-LLM project chabot
-🩹 Tattoo Aftercare Consultant Chatbot (RAG/LLM)
+# 🩹 Tattoo Aftercare Consultant Chatbot (RAG/LLM)
 
-A highly reliable, grounded, and focused chatbot designed to provide expert advice on tattoo aftercare and infection risk mitigation, strictly based on a provided knowledge base.
+![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python&logoColor=white)
+![Framework](https://img.shields.io/badge/RAG-Retrieval--Augmented--Generation-orange?style=for-the-badge)
+![API](https://img.shields.io/badge/LLM-Gemini_Pro-CC0000?style=for-the-badge&logo=google&logoColor=white)
+![Faithfulness](https://img.shields.io/badge/Faithfulness-1.0-green?style=for-the-badge)
 
-This project showcases a Retrieval-Augmented Generation (RAG) system with extreme constraints on Faithfulness (non-hallucination) to ensure user safety and trust in medical/care advice.
+**Tattoo Aftercare Consultant** is a highly reliable, grounded, and focused chatbot designed to provide expert advice on tattoo healing and infection risk mitigation. Built using a Retrieval-Augmented Generation (RAG) architecture, this system prioritizes safety and accuracy by strictly adhering to a verified knowledge base.
 
-✨ Project Goal
+---
 
-The primary objective of this LLM implementation is to act as a supportive consultant that provides only grounded, verifiable information from its sources, explicitly avoiding unsupported general knowledge or speculation.
+## ✨ Project Goal
 
-🤖 Core LLM Mandates (The "Safety Guardrails")
+The primary objective is to deliver a supportive consultant that provides only **grounded, verifiable information**. By enforcing extreme constraints on faithfulness, the system explicitly avoids hallucinations, unsupported general knowledge, or speculation, ensuring user trust in high-stakes care advice.
 
-The system operates under a strict set of rules, making it ideal for high-stakes information delivery:
+---
 
-Strict Grounding: All output must be supported by the provided source documents.
+## 🤖 Core LLM Mandates (Safety Guardrails)
 
-No Guessing: If an answer cannot be found, the bot politely defaults to a safe, "I cannot find that information" response.
+To ensure maximum reliability, the system operates under a strict set of logic "firewalls":
 
-Comprehensive Advice: If sources conflict (e.g., two different cleaning methods), the bot presents both valid options to the user.
+* **Strict Grounding:** Every output must be supported by the provided source documents.
+* **No Guessing:** If the knowledge base lacks an answer, the bot politely defaults to: *"I cannot find that information."*
+* **Comprehensive Advice:** If sources offer multiple valid perspectives (e.g., different cleaning methods), the bot presents all options fairly.
+* **Accessibility:** Medical and technical terms are translated into "regular person talk" to maintain a warm, casual, and supportive persona.
+* **Mandatory Citation:** Every response concludes with a direct citation to the specific document source.
+* **Safety Disclaimer:** A clear medical disclaimer is provided upfront, clarifying that the AI is not a replacement for a professional doctor or artist.
 
-Accessibility: All medical/technical terms are translated into "regular person talk" to maintain a warm and casual persona.
+---
 
-Mandatory Citation: Every response must end with a citation to the document source.
+## 📊 Evaluation Results
 
-Disclaimer: A clear disclaimer is provided upfront, stating the AI cannot replace a medical professional.
+The model was rigorously tested on key RAG quality metrics to ensure peak performance in reliability and completeness.
 
-📊 Evaluation Results
+| Metric | Score | Interpretation |
+| :--- | :--- | :--- |
+| **Faithfulness** | **1.0** | **Perfect Reliability.** 100% of generated facts are directly supported by sources. Zero Hallucination. |
+| **Recall** | **0.96** | **Excellent.** The model captures 96% of the relevant information available in the retrieved context. |
+| **Precision** | **0.92** | **Very High.** 92% of the generated content is focused and relevant to the user's initial query. |
 
-The model was evaluated on key RAG quality metrics, demonstrating exceptional performance in both reliability and completeness.
+> **Key Takeaway:** The system excels at trustworthiness (1.0 Faithfulness) while remaining highly comprehensive and on-topic.
 
-Metric
+---
 
-Score
+## ⚙️ Getting Started
 
-Interpretation
+### 1. Installation
+Clone the repository and install the required dependencies:
 
-Faithfulness (Groundedness)
-
-1.0
-
-Perfect Reliability. 100% of generated facts are directly supported by the source documents. Zero Hallucination.
-
-Recall (Completeness)
-
-0.96
-
-Excellent. The model captures 96% of the relevant information available in the retrieved context.
-
-Precision (Relevance)
-
-0.92
-
-Very High. 92% of the generated content is focused and relevant to the user's initial query.
-
-Key Takeaway
-
-The system excels at trustworthiness (1.0 Faithfulness) while remaining highly comprehensive and on-topic.
-
-⚙️ Getting Started (Setup)
-
-To run or integrate this project, you typically need to follow these steps:
-
-Clone the repository:
-
-git clone [Your-Repo-Link]
-cd tattoo-aftercare-consultant
-
-
-Install dependencies:
-
+```bash
+git clone [https://github.com/](https://github.com/)[Your-Username]/tattoo-aftercare-chatbot.git
+cd tattoo-aftercare-chatbot
 pip install -r requirements.txt
-# or npm install if using a JavaScript stack
-
-
-Configure API Key:
-Set your Gemini API key as an environment variable:
-
-export GEMINI_API_KEY="YOUR_KEY_HERE"
-
-
-Provide Knowledge Base:
-Ensure the tattoo aftercare documentation (the source data) is correctly indexed and available to the retrieval component.
-
-Run the application:
-
-python run_app.py
-
-
-📝 Future Improvements
-
-Implement conversational memory for multi-turn discussions.
-
-Integrate multi-modal input (e.g., allowing users to upload a photo of their tattoo for context).
-
-Expand the knowledge base to cover specific types of tattoos (e.g., color, blackout, cosmetic).
